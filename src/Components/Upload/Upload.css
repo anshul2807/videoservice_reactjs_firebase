@@ -1,0 +1,78 @@
+.upload{
+    display: flex;
+    /* border: 1px solid rgb(163, 161, 161); */
+    
+   
+}
+
+.upload__file{
+    flex:0.4;
+    /* border: 1px solid rgb(163, 161, 161); */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.upload__drop{
+    border: 5px dotted black;
+    padding:30px;
+    margin:60px;
+    text-align: center;
+    cursor: pointer;
+  
+   
+}
+.upload__video{
+    border: 5px dotted black;
+}
+
+.upload__information{
+    flex:0.6;
+    /* border: 1px solid rgb(163, 161, 161); */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.upload__desc1{
+    border: 1px solid black;
+    width : 70%;
+    height : 10%;
+    padding:30px;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 70px;
+}
+
+.upload__desc1 label{
+    font-size: 30px;
+}
+
+.upload__desc1 input{
+        width:250px;
+        height:30px;
+        font-size:20px
+}
+.upload__desc1 textarea{
+ 
+    font-size:20px;
+}
+ .upload__information a{
+    border: 1px solid black;
+    margin-top: 10px;
+    font-size  :35px;
+    padding: 10px;
+    width : 30%;
+    text-align: center;
+    border-radius: 30px;
+    cursor: pointer;
+ }
+
+ .upload__information a:hover{
+     background-color: #F0F0F0;
+}
+
+.upload__information h2{
+    font-size: 30px;
+   margin-top: 20px;
+   margin-bottom: 20px;
+}

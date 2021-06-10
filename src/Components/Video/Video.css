@@ -1,0 +1,12 @@
+
+.video{
+    display: flex;
+    flex-direction: column;
+}
+.video__player{
+    border:1px solid black;
+    background-color: black;
+}
+.video__information{
+    border:1px solid black;
+}
