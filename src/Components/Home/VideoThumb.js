@@ -23,6 +23,7 @@ function VideoThumb({title,desc,username,videolink,videoid}) {
                 width={'360px'}
                 height={'200px'}
                 url={videolink}
+               style={ {backgroundColor:"black"}}
                  />
            </div>
            <div className="videothumb__info">
