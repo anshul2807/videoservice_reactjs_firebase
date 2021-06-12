@@ -9,4 +9,47 @@
 }
 .video__information{
     border:1px solid black;
+    margin-top:10px;
+}
+
+.video__features{
+    margin-top:10px;
+    padding: 10px;
+    border:1px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.video__features__label{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    /* border:1px solid black; */
+
+}
+
+@media (max-width:1042px){
+    .video{
+
+    }
+    .video__player{
+
+    }
+    .video__player ReactPlayer{
+        width:300px !important;
+        height: 100px;
+    }
+    .video__information{
+        margin-top:40px;
+        padding: 10px;
+        text-align: center;
+    }
+    .video__information h1,.video__information h2,.video__information h4{
+        margin-bottom: 20px;
+    }
+
+    .video__features{
+
+    }
 }

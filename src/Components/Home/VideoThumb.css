@@ -52,3 +52,28 @@ flex:0.3;
     font-weight: 500;
     
 }
+
+@media( max-width:1042px)
+{
+    .videothumb{
+        flex-direction: column;
+       
+    }
+    .videothumb__video{
+       margin-top: 5px;;
+    }
+    .videothumb__info{
+        padding:5px;
+        
+        
+    }
+    .videothumb__info h2{
+        text-align: left;
+    }
+    .videothumb__info p{
+
+    }
+    .videothumb__info h2{
+
+    }
+}

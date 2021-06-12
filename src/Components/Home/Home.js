@@ -2,8 +2,8 @@ import React,{useContext, useEffect} from 'react'
 import './Home.css'
 import VideoThumb from './VideoThumb'
 import {VideosContext} from '../../Context/Videos'
-import firebase from "firebase";
-import {db} from '../../firebase'
+import axios from 'axios'
+
 
 function Home() {
 
@@ -11,8 +11,10 @@ function Home() {
     const [videos,setVideos] = useContext(VideosContext);
 
     useEffect(()=>{
-        db.collection('videos').orderBy('timestamp','desc').onSnapshot(snapshot=>{
-            setVideos(snapshot.docs.map(doc=>({id:doc.id,video_info:doc.data()})))})
+        axios.get('https://youtube-backend-2807.herokuapp.com/api/videos')
+        .then(data=>{
+           setVideos( data.data.map(video=>{ return {id:video._id,video_info:{videolink:video.videolink,username:video.username,title:video.title,description:video.description}}}))
+        })
     },[]);
 
     return (
@@ -38,6 +40,9 @@ function Home() {
                 </div>
             </div>
             </div>
+
+        
+
             <div className="home__content">
                
                 {videos.map(({id,video_info})=> <VideoThumb key={id} title={video_info.title} desc={video_info.description} username={video_info.username} videolink={video_info.videolink} videoid={id}/>)}

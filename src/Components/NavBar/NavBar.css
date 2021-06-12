@@ -5,38 +5,39 @@
     font-size: 30px;
     height : 60px
 }
-.navbar h1{
+
+.navbar__desktop h1{
     /* border: 1px solid black; */
 }
 
-.navbar ul{
+.navbar__ul__desktop{
 display: flex;
 list-style: none;
 align-items: center;
 /* border: 1px solid black; */
 
 }
-.navbar li{
+.navbar__ul__desktop li{
  
  /* border: 1px solid black; */
  cursor: pointer;
  font-weight: 500;
  
 }
-.navbar li:hover{
+.navbar__ul__desktop li:hover{
     border-bottom: 2px solid rgb(163, 161, 161);
 }
 
-.navbar li:not(:nth-child(3))
+.navbar__ul__desktop li:not(:nth-child(3))
 {
     margin-right: 20px;
 }
-.navbar li a
+.navbar__ul__desktop li a
 {
    text-decoration: none;
    color : black;
 }
-.navbar li a
+.navbar__ul__desktop li a
 {
    color : black;
 }
@@ -86,4 +87,73 @@ align-items: center;
 
 .navbar__search a:hover{
     background-color:#F0F0F0
+}
+
+.navbar .navbar__mobile{
+    /* display:none; */
+    /* transition-duration: 2s; */
+}
+.navbar__ul__mobile{
+    display: flex;   
+    list-style: none;
+    align-items: center;
+}
+.navbar__ul__mobile li{
+    margin-right: 25px;
+    cursor: pointer;
+    font-weight: 500;
+}
+.navbar__burger{
+    display: none !important;
+}
+
+.navbar__burger{
+    position:relative ;
+    right:-3px;
+    top:12px ;
+    margin: 5px;
+}
+/* mobile */
+
+@media (max-width : 1042px)
+{  
+    .navbar__ul__desktop{
+        display:none;
+    }
+     .navbar .navbar__desktop{
+    font-size: 25px;
+    width:100%;
+    height: 60%;
+    }
+    .navbar h1{
+        font-size:20px;
+        margin-top:17px;
+    }
+    .navbar__search{
+            
+    }
+    .navbar__search input{
+        max-width : 110px;
+        max-height : 30%;
+        margin-right: 2px;
+    }
+    .navbar__search a{
+        
+        font-size: 15px;
+        padding: 5px;
+    }
+    .navbar__ul__mobile{
+        display: flex;   
+        list-style: none;
+        align-items: center;
+    }
+    .navbar__ul__mobile li{
+        margin-right: 25px;
+        cursor: pointer;
+        font-weight: 500;
+        font-size:20px;
+    }
+    .navbar__burger{
+        display:block !important;
+    }
 }

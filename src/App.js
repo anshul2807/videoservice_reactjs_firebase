@@ -19,7 +19,7 @@ function App() {
       {login ?  <Upload /> : <FirstLogin />}
        
       </Route>
-      <Route  path="/videos">
+      <Route  path="/videos/:id">
       <Video /> 
       </Route>
       <Route  path="/" >

@@ -6,12 +6,12 @@ import {BrowserRouter as Router} from 'react-router-dom'
 import { UserProvider } from './Context/User';
 import {VideosProvider} from './Context/Videos'
 import {LoginProvider} from './Context/Login'
-import {PlayerVideoProvider} from './Context/PlayerVideo'
+
 
 ReactDOM.render(
   <Router>
     <LoginProvider>
-   <PlayerVideoProvider>
+   
     <VideosProvider>
     <UserProvider>
   <React.StrictMode>
@@ -19,7 +19,7 @@ ReactDOM.render(
   </React.StrictMode>
   </UserProvider>
   </VideosProvider>
-  </PlayerVideoProvider>
+  
   </LoginProvider>
   </Router>,
   document.getElementById('root')

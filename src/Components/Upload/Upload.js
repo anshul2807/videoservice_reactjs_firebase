@@ -6,7 +6,7 @@ import {db, storage} from '../../firebase'
 import {UserContext} from '../../Context/User'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import firebase from "firebase";
+import axios from 'axios'
 
 function Upload() {
 
@@ -18,7 +18,7 @@ function Upload() {
    
     const [progress,setprogress]=useState(0);
     const file = files[0];
-  const handlePosts =   () =>{
+  const handlePosts =    () =>{
     setprogress(0)
      if(title === '' || desc === '')
       {
@@ -60,18 +60,13 @@ function Upload() {
                     .getDownloadURL()
                     .then(url=>
                         {
-                          db.collection("videos").add({
-                            timestamp : firebase.firestore.FieldValue.serverTimestamp(),
-                            username: user.names,
-                            title: title,
-                            description: desc,
-                            videolink: url,
-                            thumbnail : '#'
-                        })
-                        .then((docRef) => {
-                            console.log("Document written with ID: ", docRef.id);
-                            
-                            toast("🦄 Posted Successfully", {
+                          axios.post('https://youtube-backend-2807.herokuapp.com/api/postvideos',{
+                          username: user.names,
+                          title: title,
+                          description: desc,
+                          videolink: url
+                        }).then(()=>{
+                          toast("🦄 Posted Successfully", {
                               position: "top-left",
                               autoClose: 5000,
                               hideProgressBar: false,
@@ -83,6 +78,8 @@ function Upload() {
                            
                             console.log(file);
                         }).catch(error => console.log("my error"))
+                      
+                          
                         
                     })
             }

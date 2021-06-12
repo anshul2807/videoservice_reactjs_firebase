@@ -1,23 +1,21 @@
 import React,{useContext} from 'react'
 import './VideoThumb.css'
 import  {Link} from 'react-router-dom' 
-import billi from '../../statics/img/a1.png'
+// import billi from '../../statics/img/a1.png'
 import ReactPlayer from 'react-player'
- import {PlayerVideoContext} from '../../Context/PlayerVideo'
+//  import {PlayerVideoContext} from '../../Context/PlayerVideo'
 
  
 
 function VideoThumb({title,desc,username,videolink,videoid}) {
 
-    const [playervideos,setPlayerVideos] = useContext(PlayerVideoContext)
 
-    const handlePlayerVideo = () =>{
-        setPlayerVideos({title,desc,username,videolink,videoid});
-    }
+
+   
 
     return (
-        <Link  to="/videos">
-        <div onClick={handlePlayerVideo} className="videothumb">
+        <Link  to={`/videos/${videoid}`}>
+        <div className="videothumb">
            <div className="videothumb__video">
                 {/* <img src={billi} alt="a1" /> */}
                 <ReactPlayer 

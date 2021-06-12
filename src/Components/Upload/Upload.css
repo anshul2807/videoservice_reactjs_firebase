@@ -76,3 +76,29 @@
    margin-top: 20px;
    margin-bottom: 20px;
 }
+
+@media (max-width:1042px)
+{
+    .upload{
+        flex-direction: column;
+    }
+    .upload__video{
+
+    }
+    .upload__information{
+
+    }
+    .upload__desc1{
+       
+       
+        padding:30px;
+       
+        align-items: center;
+       
+    }
+    
+    .upload__desc1 label{
+        font-size: 20px;
+        margin-right: 10px;
+    }
+}

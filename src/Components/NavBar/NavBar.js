@@ -1,8 +1,9 @@
-import React ,{useEffect,useContext} from 'react'
+import React ,{useEffect,useContext, useState} from 'react'
 import './NavBar.css'
 import {Link} from 'react-router-dom'
 import {authe} from '../../firebase'
 import firebase from 'firebase'
+import MenuIcon from '@material-ui/icons/Menu';
 
 import {UserContext} from '../../Context/User'
 import {LoginContext} from '../../Context/Login'
@@ -76,16 +77,37 @@ function NavBar() {
           });
           
     }
+    const [bstyle,setBstyle] = useState("none")
+    const handleBurger = () =>{
+        bstyle === "none" ?  setBstyle("flex") :   setBstyle("none");
+    }
 
     return (
         <div className="navbar">
-            <nav>
+            <nav clasName="navbar__desktop">
                 <h1>Video Service</h1>
                 <div className="navbar__search">
                     <input />
                     <a>Search</a>
                 </div>
-                <ul>
+                <MenuIcon className="navbar__burger" onClick={handleBurger} />
+                <ul className="navbar__ul__desktop">
+                    <li><Link to="/">Home</Link></li>
+                    {!login?(
+                            <li onClick={handleSingin}>Sign In with Google</li>
+                    ):(
+                            <>
+                            <li><Link to="/upload">UPLOAD</Link></li>
+                             <li onClick={handleLogout}>Logout</li>
+                            </>
+                    )}
+                   
+                    
+                </ul>
+               
+            </nav>
+            <nav  style={{display :`${bstyle}` }} className="navbar__mobile">
+            <ul  className="navbar__ul__mobile" >
                     <li><Link to="/">Home</Link></li>
                     {!login?(
                             <li onClick={handleSingin}>Sign In with Google</li>
