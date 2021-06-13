@@ -20,7 +20,7 @@
     flex-direction: row;
     justify-content: space-around;
 }
-.video__features::after{
+/* .video__features::after{
     position: absolute;
     
     content: "";
@@ -28,7 +28,7 @@
     height:2px;
     background-color:#ECECEC;
     bottom:26.5em;
-}
+} */
 .video__features__label{
     display: flex;
     flex-direction: row;
@@ -151,7 +151,11 @@
     margin-right: 20px;
 }
 .video__commentSection{
-
+    margin-top:30px;
+    margin-left: 100px;
+    /* border:1px solid black; */
+    width:50%;
+    
 }
 
 /* Mobile */
@@ -179,4 +183,86 @@
     .video__features{
 
     }
+
+    .video__information{
+        margin: 5px;
+    }
+    .video__title{
+        
+      
+    }
+    .video__title p{
+      margin: 0px;
+      margin-bottom: 10px;
+      
+      width: 300px;
+    }
+    .video__username{
+      
+       margin: 0px;
+     
+    }
+    
+    .video__username::before{
+       width: 80%;
+       left:30px;
+       top:70px
+    }
+    
+    
+    
+    .video__username p{
+       margin: 0px;
+        
+    }
+    .video__decs{
+        margin: 0px;
+        
+        width:80%;
+        padding: 0px;
+        margin-left: 30px;
+    }
+    .video__decs::after{
+        
+      left:20px;
+      width: 80%;
+    }
+    
+    .video__decs__p{
+        
+       text-align: left;
+       margin:0px;
+       
+    }
+    .video__decs__show-more{
+       
+    }
+    .video__decs__show-more:hover{
+        
+    }
+    .video__commentBox{
+        margin-top:0px;
+        padding: 0px;
+       
+    }
+    .video__heading{
+       
+    }
+    
+    .video__commentInput{
+        width:70%;
+        margin-left: 30px;
+    }
+    .video__commentButton{
+        margin-left: 80px;
+        margin-top:20px;
+    }
+    .video__commentButton Button{
+       
+    }
+    .video__commentSection{
+      
+        margin-left: 30px;
+    }
+
 }

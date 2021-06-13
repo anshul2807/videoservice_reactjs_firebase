@@ -1,0 +1,41 @@
+.comment{
+     display: grid;
+    grid-template-areas: "profile username"
+                         "profile  message";
+   padding: 5px;
+  
+   width:50%;
+}
+.comment__profile{
+    grid-area:"profile" ;
+   
+}
+
+.comment__username{
+    grid-area:"username" ;
+    font-size:15px;
+    font-weight:bold;
+    padding: 5px;
+}
+
+.comment__message{
+    grid-area:"message" ;
+    font-size:15px;
+    padding: 5px;
+}
+
+.comment__buttons{
+
+}
+
+.comment__info{
+    width:50%;
+    /* text-align: left; */
+    /* border:1px solid black; */
+    width:400px
+}
+
+@media(max-width:1042px)
+{
+    
+}

@@ -1,4 +1,4 @@
-import React, { useState ,useEffect} from 'react'
+import React, { useState ,useEffect,useContext} from 'react'
 import './Video.css'
 import ReactPlayer from 'react-player'
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
@@ -9,6 +9,9 @@ import axios from 'axios'
 import {useParams} from 'react-router-dom'
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import Comment from '../Comment/Comment';
+import {UserContext} from '../../Context/User' 
+
 
 
 const ReadMore = ({ children }) => {
@@ -18,6 +21,8 @@ const ReadMore = ({ children }) => {
       setIsReadMore(!isReadMore);
     //   console.log(text.slice(0, 150).length);
     };
+
+
  
     return (
       <p className="video__decs__p">
@@ -67,10 +72,17 @@ function Video() {
     const [actionColor1,setActionColor1] = useState('action');
     const [actionColor2,setActionColor2] = useState('action');
 
-    
+    const [comment,setComment] = useState('');
+
+    const [listcomment,setListComment] = useState([])
+
+   const[inputStyle,setInputStyle] = useState(false)
+   const [user,setUser] = useContext(UserContext);
+  
     return (
         <div className="video">
             <div className="video__player">
+                
                 <ReactPlayer
                
                 playing={false}
@@ -126,6 +138,7 @@ function Video() {
                     <div className="video__heading">
                         <p>Comments</p>
                     </div>
+                    {user?
                     <div className="video__commentInput">
                         <AccountCircleIcon fontSize='large'/>
                         <TextField
@@ -137,14 +150,22 @@ function Video() {
                             InputLabelProps={{
                                 shrink: true,
                             }}
+                            value={comment}
+                            onChange={e=>setComment(e.target.value)}
+                            onClick={()=>setInputStyle(true)}
+
                         />
                     </div>
-                    <div className="video__commentButton">
-                        <Button variant="contained">Cancel</Button>
-                        <Button variant="contained" color="primary">Comment</Button>
+                    :null}
+                    {inputStyle?
+                    <div className="video__commentButton" >
+                        <Button variant="contained"  onClick={()=>setInputStyle(false)} >Cancel</Button>
+                        <Button variant="contained" color="primary" disabled={!comment} onClick={()=>{setListComment([{username:user.names,comment:comment },...listcomment]);setComment('')}} >Comment</Button>
                     </div>
+                    :null}
                     <div className="video__commentSection">
-
+                        {listcomment.map(data=>  <Comment value={data.comment} username={data.username} />)}
+                      
                     </div>
                 </div>
                

@@ -62,6 +62,7 @@ align-items: center;
     color: rgb(59, 58, 58);
     padding: 5px;
     border: 1px solid rgb(163, 161, 161);
+    padding-left: 10px;
     
 }
 .navbar__search input:focus{
